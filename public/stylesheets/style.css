@@ -1,8 +1,10 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.esqueletoProduto{
+    margin-bottom: 5px;
+    width: 200px;
 }
 
-a {
-  color: #00B7FF;
+.imagem{
+  width: 140px;
+  height: 140px;
+  background: #CCC;
 }

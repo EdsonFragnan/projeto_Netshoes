@@ -1,15 +1,29 @@
-var fs = require('fs');
-var path = require("path");
-var arq = path.join(__dirname, '../db/produtos.json');
-
 //GET Obtem todos os produtos
-exports.getProdutos = function(req, res) {
-  fs.readFile(arq, {encoding: 'utf-8'}, function(err, data) {
-    if (err) {
-      res.status(404).send('Arquivo não encontrado');
-    } else {
-      var produtos = JSON.parse(data)
-      res.status(200).send(produtos);
+module.exports = (app) => {
+  const fs = require('fs');
+  const path = require("path");
+  const arq = path.join(__dirname, '../db/produtos.json');
+
+  var ProdutoController = {
+    getProdutos: (req, res) => {
+      fs.readFile(arq, {encoding: 'utf-8'}, (err, data) => {
+        if (err) {
+          res.status(404).send('Arquivo não encontrado');
+        } else {
+          const parseProdutos = JSON.parse(data);
+          const list = parseProdutos.products;
+          const produtosList = [];
+          for(var i in list) {
+            produtosList.push({
+                'produto': list[i].title,
+                'preco': list[i].price,
+                'moeda': list[i].currencyFormat
+            });
+          }
+          res.render('index', {produtos: produtosList});
+        }
+      });
     }
-  });
+  }
+  return ProdutoController;
 }

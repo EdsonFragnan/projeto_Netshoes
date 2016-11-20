@@ -1,9 +1,5 @@
-var express = require('express');
-var produtos = require('../controllers/produtos.js');
-var rota = express.Router();
-
-//Rotas de cadastro Usuário
-rota.route('/produtos')
-	.get(produtos.getProdutos);
-
-module.exports = rota;
+//Rota de retornar Produtos
+module.exports = (app) => {
+  const produto = app.controllers.produtos;
+  app.get('/', produto.getProdutos);
+}
