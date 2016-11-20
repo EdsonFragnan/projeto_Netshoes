@@ -4,7 +4,7 @@ module.exports = (app) => {
   const path = require("path");
   const arq = path.join(__dirname, '../db/produtos.json');
 
-  var ProdutoController = {
+  const ProdutoController = {
     getProdutos: (req, res) => {
       fs.readFile(arq, {encoding: 'utf-8'}, (err, data) => {
         if (err) {
@@ -15,9 +15,11 @@ module.exports = (app) => {
           const produtosList = [];
           for(var i in list) {
             produtosList.push({
+                'idProduto': list[i].id,
                 'produto': list[i].title,
-                'preco': list[i].price,
-                'moeda': list[i].currencyFormat
+                'preco': tratamentoPreco(list[i].price),
+                'moeda': list[i].currencyFormat,
+                'tamanhos': list[i].availableSizes
             });
           }
           res.render('index', {produtos: produtosList});
@@ -26,4 +28,8 @@ module.exports = (app) => {
     }
   }
   return ProdutoController;
+}
+
+const tratamentoPreco = (preco) => {
+  return preco + '0';
 }

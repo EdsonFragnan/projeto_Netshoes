@@ -1,10 +1,95 @@
-.esqueletoProduto{
+span.glyphicon-shopping-cart {
+    font-size: 1.2em;
+}
+
+.esqueletoProduto {
     margin-bottom: 5px;
     width: 200px;
 }
 
-.imagem{
-  width: 140px;
-  height: 140px;
-  background: #CCC;
+#carrinho {
+  background: red;
+  font-size: 20px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  color: #FFF;
+  margin-top: 23px;
+  margin-left: 37px;
+}
+
+#carrinhoCompras {
+  padding-top: 10px;
+  margin-left: 47%;
+  cursor: pointer;
+}
+
+.imagem {
+  margin-left: 25%;
+}
+
+.descProduto {
+  text-align: center;
+  margin-bottom: 0px;
+}
+.precProduto {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.valProduto {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.parcelas {
+  color: #CCC;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.btnComprar {
+  margin-bottom: 10px;
+  margin-left: 37%;
+}
+
+/**/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }

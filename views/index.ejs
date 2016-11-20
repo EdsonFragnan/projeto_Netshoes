@@ -7,22 +7,39 @@
     <meta name="author" content="Edson Luiz Fragnan">
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
+    <script src="javascripts/script.js"></script>
   </head>
 
   <body>
     <div class="container">
-      <br>
-      <div>
-        <% for(var i=0; i<produtos.length; i++) {%>
-          <div class="col-xs-6 col-lg-4 esqueletoProduto">
-              <div class="imagem"></div>
-              <p><%- produtos[i].produto %></p>
-              <p><%- produtos[i].moeda %></p>
-              <p><%- produtos[i].preco %></p>
-              <button type="button" class="btn btn-primary">Comprar</button>
+      <div id="carrinhoCompras">
+        <span id="carrinho">0</span>
+        <img src="images/carrinho.jpg" alt="carrinho" style="width:15%">
+      </div>
+      <hr />
+      <div class="row">
+        <% produtos.forEach(function(produto) { %>
+          <div class="col-xs-6 col-lg-4 thumbnail">
+              <img src="images/corinthians.jpg" class="imagem" alt="Corinthians" style="width:50%">
+              <p class="descProduto"><%- produto.produto %></p>
+              <p class="precProduto"><%- produto.moeda %> <span class="valProduto"><strong><%- produto.preco %></strong></span></p>
+              <p class="parcelas">ou 3 x <%- produto.moeda %> 30,80</p>
+              <input type="button" class="btn btn-default btnComprar" onclick="add();" value="Comprar" />
           </div>
-        <% } %>
+        <% }); %>
       </div>
     </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">×</span>
+        <h3>Produtos</h3>
+        <hr />
+        <div id="prodCarrinho">
+
+        </div>
+      </div>
+    </div>
+    <script src="javascripts/scriptModal.js"></script>
   </body>
 </html>

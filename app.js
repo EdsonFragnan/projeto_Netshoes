@@ -7,8 +7,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('view options', {layout: false});
 app.use(express.static(path.join(__dirname, 'public')));
-//const rotas = require('./routes/index.js');
-//app.use('/', rotas);
 
 load('db').then('controllers').then('routes').into(app);
 
