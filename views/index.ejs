@@ -22,6 +22,7 @@
           <div class="col-xs-6 col-lg-4 thumbnail">
               <img src="images/corinthians.jpg" class="imagem <%- produto.idProduto %>" alt="Corinthians" style="width:50%">
               <p class="descProduto <%- produto.idProduto %>"><%- produto.produto %></p>
+              <p class="tamanho <%- produto.idProduto %>"><%- produto.tamanhos %></p>
               <p class="precProduto"><%- produto.moeda %> <span class="valProduto <%- produto.idProduto %>"><%- produto.preco %></span></p>
               <p class="parcelas <%- produto.idProduto %>">ou 3 x <%- produto.moeda %> 30,80</p>
               <input type="button" class="btn btn-default btnComprar" id="<%- produto.idProduto %>" onclick="add(this.id);" value="Comprar" />
@@ -37,7 +38,9 @@
         <span class="close">×</span>
         <h3>Carrinho</h3>
         <hr />
-        <div id="prodCarrinho"></div>
+        <div id="prodCarrinho">
+          <p>Carrinho vazio</p>
+        </div>
       </div>
     </div>
     <script src="javascripts/scriptModal.js"></script>

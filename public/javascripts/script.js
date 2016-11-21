@@ -6,18 +6,20 @@ function add(produto) {
   var sacola = [];
   var totalCarrinho;
   for(var i in produtoCarrinho) {
+    console.log(produtoCarrinho[i].innerHTML);
     var produto = {
-      'id': produtoCarrinho[0].idProduto,
       'imagem': produtoCarrinho[0].currentSrc,
       'descricao': produtoCarrinho[1].textContent,
-      'preco': produtoCarrinho[2].textContent,
-      'totalCarrinho': parseFloat(produtoCarrinho[2].textContent)
+      'tamanho': produtoCarrinho[2].textContent,
+      'preco': produtoCarrinho[3].textContent,
+      'totalCarrinho': parseFloat(produtoCarrinho[3].textContent)
     };
   }
   sacola.push([
     '<div class="col-xs-6 col-lg-4 thumbnail thumb2">' +
         '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:50%">' +
         '<p class="descProduto">' + produto.descricao + '</p>' +
+        '<p class="tamanhoProduto">' + produto.tamanho + '</p>' +
         '<p class="precProduto">R$ ' + produto.preco + '</p>' +
         '<input type="button" class="btn btn-default btn2" id="'+ produto.id +'" onclick="remove(this.id);" value="Remover" />' +
     '</div>'+

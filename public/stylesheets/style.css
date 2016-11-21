@@ -39,6 +39,16 @@ span.glyphicon-shopping-cart {
   margin-bottom: 0px;
 }
 
+.tamanho {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.tamanhoProduto {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
 .valProduto {
   font-size: 20px;
   margin-bottom: 0px;
