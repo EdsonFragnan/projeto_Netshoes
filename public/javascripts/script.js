@@ -6,7 +6,6 @@ function add(produto) {
   var sacola = [];
   var totalCarrinho;
   for(var i in produtoCarrinho) {
-    console.log(produtoCarrinho[i].innerHTML);
     var produto = {
       'imagem': produtoCarrinho[0].currentSrc,
       'descricao': produtoCarrinho[1].textContent,
@@ -15,7 +14,7 @@ function add(produto) {
       'totalCarrinho': parseFloat(produtoCarrinho[3].textContent)
     };
   }
-  sacola.push([
+  sacola.push(
     '<div class="col-xs-6 col-lg-4 thumbnail thumb2">' +
         '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:50%">' +
         '<p class="descProduto">' + produto.descricao + '</p>' +
@@ -25,9 +24,12 @@ function add(produto) {
     '</div>'+
     '<hr />' +
     '<p class="precProduto"><strong>TOTAL: R$ </strong>' + produto.totalCarrinho + '0' + '</p>'
-  ]);
+  );
+
+
   sacola.toString();
-  document.getElementById("prodCarrinho").innerHTML = sacola;
+  document.getElementById('prodCarrinho').innerHTML = sacola;
+  document.getElementById("btnFecharCompra").style.display = "block";
 }
 
 function remove(id){
@@ -41,5 +43,6 @@ function remove(id){
   var vazio = document.getElementById("prodCarrinho").innerHTML = vazio;
   if (vazio.length === 0) {
     document.getElementById("prodCarrinho").innerHTML = 'Carrinho vazio';
+    document.getElementById("btnFecharCompra").style.display = "none";
   }
 }
