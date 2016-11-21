@@ -18,7 +18,7 @@ function add(produto) {
     '<div class="col-xs-6 col-lg-4 thumbnail thumb2">' +
         '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:50%">' +
         '<p class="descProduto">' + produto.descricao + '</p>' +
-        '<p class="precProduto">R$: ' + produto.preco + '</p>' +
+        '<p class="precProduto">R$ ' + produto.preco + '</p>' +
         '<input type="button" class="btn btn-default btn2" id="'+ produto.id +'" onclick="remove(this.id);" value="Remover" />' +
     '</div>'+
     '<hr />' +
