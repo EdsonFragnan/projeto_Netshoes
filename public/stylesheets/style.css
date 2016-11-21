@@ -93,3 +93,12 @@ span.glyphicon-shopping-cart {
     text-decoration: none;
     cursor: pointer;
 }
+
+.thumb2 {
+  float: none;
+}
+
+.btn2 {
+  margin-left: 55px;
+  margin-top: 10px;
+}

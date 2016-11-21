@@ -20,24 +20,24 @@
       <div class="row">
         <% produtos.forEach(function(produto) { %>
           <div class="col-xs-6 col-lg-4 thumbnail">
-              <img src="images/corinthians.jpg" class="imagem" alt="Corinthians" style="width:50%">
-              <p class="descProduto"><%- produto.produto %></p>
-              <p class="precProduto"><%- produto.moeda %> <span class="valProduto"><strong><%- produto.preco %></strong></span></p>
-              <p class="parcelas">ou 3 x <%- produto.moeda %> 30,80</p>
-              <input type="button" class="btn btn-default btnComprar" onclick="add();" value="Comprar" />
+              <img src="images/corinthians.jpg" class="imagem <%- produto.idProduto %>" alt="Corinthians" style="width:50%">
+              <p class="descProduto <%- produto.idProduto %>"><%- produto.produto %></p>
+              <p class="precProduto"><%- produto.moeda %> <span class="valProduto <%- produto.idProduto %>"><%- produto.preco %></span></p>
+              <p class="parcelas <%- produto.idProduto %>">ou 3 x <%- produto.moeda %> 30,80</p>
+              <input type="button" class="btn btn-default btnComprar" id="<%- produto.idProduto %>" onclick="add(this.id);" value="Comprar" />
           </div>
         <% }); %>
       </div>
     </div>
+    <div id="lol">
 
+    </div>
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">×</span>
-        <h3>Produtos</h3>
+        <h3>Carrinho</h3>
         <hr />
-        <div id="prodCarrinho">
-
-        </div>
+        <div id="prodCarrinho"></div>
       </div>
     </div>
     <script src="javascripts/scriptModal.js"></script>

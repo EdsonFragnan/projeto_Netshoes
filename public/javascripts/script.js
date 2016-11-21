@@ -1,71 +1,38 @@
-function add() {
+function add(produto) {
   var contador = document.getElementById('carrinho').innerHTML;
   var valContador = parseFloat(contador) + 1;
   document.getElementById('carrinho').innerText = valContador;
+  var produtoCarrinho = document.getElementsByClassName(produto);
+  var sacola = [];
+  var totalCarrinho;
+  for(var i in produtoCarrinho) {
+    var produto = {
+      'id': produtoCarrinho[0].idProduto,
+      'imagem': produtoCarrinho[0].currentSrc,
+      'descricao': produtoCarrinho[1].textContent,
+      'preco': produtoCarrinho[2].textContent,
+      'totalCarrinho': parseFloat(produtoCarrinho[2].textContent)
+    };
+  }
+  sacola.push([
+    '<div class="col-xs-6 col-lg-4 thumbnail thumb2">' +
+        '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:50%">' +
+        '<p class="descProduto">' + produto.descricao + '</p>' +
+        '<p class="precProduto">R$: ' + produto.preco + '</p>' +
+        '<input type="button" class="btn btn-default btn2" id="'+ produto.id +'" onclick="remove(this.id);" value="Remover" />' +
+    '</div>'+
+    '<hr />' +
+    '<p class="precProduto"><strong>TOTAL: R$ </strong>' + produto.totalCarrinho + '0' + '</p>'
+  ]);
+  document.getElementById("prodCarrinho").innerHTML = sacola;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //var produtos = {};
-  //produtos.push(produto);
-  //alert(produtos);
-
-    //var carrinho = [];
-  //var total = 0;
-//document.getElementById('carrinho').innerHTML = produto.length;
-  //for (var i in produto) {
-  // total = produto[i];
-  //  carrinho.push(total);
-   //}
-   //document.getElementById('prodCarrinho').innerText = carrinho;
-
-  /*var objetoProduto = {
-    'produto': produto.produto,
-    'preco':  produto.preco,
-    'moeda': produto.moeda,
-    'tamanhos': produto.tamanhos,
-  };*/
-  //for(var i in produto) {
-    //var str = JSON.stringify(produto);
-    //alert(JSON.stringify(objetoProduto));
-  //}
-/*
-  var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits;
-
-function myFunction() {
-    fruits.push("Kiwi");
-    document.getElementById("demo").innerHTML = fruits;
-}*/
-
-//  document.getElementById('carrinho').innerHTML = produto.length;
-//  document.getElementById('prodCarrinho').innerText = produto;
+function remove(id){
+  var removeProduto = document.getElementsByClassName(id);
+  var vazio = [];
+  vazio.splice(removeProduto);
+  var contador = document.getElementById('carrinho').innerHTML;
+  var valContador = parseFloat(contador) - 1;
+  document.getElementById('carrinho').innerText = valContador;
+  document.getElementById("prodCarrinho").innerHTML = vazio;
+}
