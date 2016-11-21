@@ -26,6 +26,7 @@ function add(produto) {
     '<hr />' +
     '<p class="precProduto"><strong>TOTAL: R$ </strong>' + produto.totalCarrinho + '0' + '</p>'
   ]);
+  sacola.toString();
   document.getElementById("prodCarrinho").innerHTML = sacola;
 }
 
@@ -37,4 +38,8 @@ function remove(id){
   var valContador = parseFloat(contador) - 1;
   document.getElementById('carrinho').innerText = valContador;
   document.getElementById("prodCarrinho").innerHTML = vazio;
+  var vazio = document.getElementById("prodCarrinho").innerHTML = vazio;
+  if (vazio.length === 0) {
+    document.getElementById("prodCarrinho").innerHTML = 'Carrinho vazio';
+  }
 }
