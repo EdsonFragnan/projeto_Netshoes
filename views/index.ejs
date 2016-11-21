@@ -5,8 +5,8 @@
     <title>Projeto NetShoes</title>
     <meta name="description" content="Projeto NetShoes">
     <meta name="author" content="Edson Luiz Fragnan">
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css" />
     <script src="javascripts/script.js"></script>
   </head>
 
@@ -19,7 +19,9 @@
       <hr />
       <div class="row">
         <% produtos.forEach(function(produto) { %>
-          <div class="col-xs-6 col-lg-4 thumbnail">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 thumbnail">
+              <span class="spanId <%- produto.idProduto %>"><%- produto.idProduto %></span>
+              <p class="sku <%- produto.sku %>"><%- produto.sku %></p>
               <img src="images/corinthians.jpg" class="imagem <%- produto.idProduto %>" alt="Corinthians" style="width:50%">
               <p class="descProduto <%- produto.idProduto %>"><%- produto.produto %></p>
               <p class="tamanho <%- produto.idProduto %>"><%- produto.tamanhos %></p>
@@ -38,9 +40,9 @@
         <span class="close">×</span>
         <h3>Carrinho</h3>
         <hr />
-        <div id="prodCarrinho">
-          <p>Carrinho vazio</p>
-        </div>
+        <div id="prodCarrinho"></div>
+        <hr />
+        <div id="total"></div>
         <input type="button" class="btn btn-default" id="btnFecharCompra" value="Comprar" />
       </div>
     </div>

@@ -16,6 +16,7 @@ module.exports = (app) => {
           for(var i in list) {
             produtosList.push({
                 'idProduto': list[i].id,
+                'sku': list[i].sku,
                 'produto': list[i].title,
                 'preco': tratamentoPreco(list[i].price),
                 'moeda': list[i].currencyFormat,

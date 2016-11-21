@@ -111,6 +111,7 @@ span.glyphicon-shopping-cart {
 .btn2 {
   margin-left: 55px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #btnFecharCompra {
@@ -120,4 +121,12 @@ span.glyphicon-shopping-cart {
   background: #000;
   color: #FFF;
   display: none;
+}
+
+.spanId {
+  color: #FFF;
+}
+
+.sku {
+  color: #FFF;
 }
