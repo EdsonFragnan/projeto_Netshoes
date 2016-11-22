@@ -13,7 +13,7 @@ span.glyphicon-shopping-cart {
 }
 #cifrao3 {
   position: absolute;
-  margin-left: 230px;
+  margin-left: 250px;
   font-weight: bold;
 }
 
@@ -151,4 +151,5 @@ span.glyphicon-shopping-cart {
   text-align: center;
   font-weight: bold;
   margin-top: 5px;
+  margin-left: 45px;
 }
