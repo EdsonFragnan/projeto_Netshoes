@@ -23,13 +23,22 @@ function add(produto) {
         '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:50%">' +
         '<p class="descProduto">' + produto.descricao + '</p>' +
         '<p class="tamanhoProduto">' + produto.tamanho + '</p>' +
-        '<p class="precProdutoCarrinho">' + produto.preco + '</p>' +
+        '<p class="precProdutoCarrinho">R$ ' + produto.preco + '</p>' +
         '<input type="button" class="btn btn-default btn2" id="'+ produto.sku +'" onclick="remove(this.id);" value="Remover" />' +
     '</div>'
   );
 
+  var valProdutoCar = parseFloat(produto.preco);
+  var total = [];
+  var soma = 0;
+  total.push(valProdutoCar);
+  for (var i = 0; i < total.length; i++) {
+    soma = total[i] + soma;
+  }
+
   sacola.toString();
   document.getElementById("prodCarrinho").insertAdjacentHTML('beforeend', sacola);
+  document.getElementById("total").innerHTML = '<strong>TOTAL: R$ ' + soma + '0</strong>';
   document.getElementById("btnFecharCompra").style.display = "block";
 }
 

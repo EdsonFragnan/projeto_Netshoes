@@ -136,3 +136,7 @@ span.glyphicon-shopping-cart {
   text-align: center;
   margin-bottom: 0px;
 }
+
+#total {
+  text-align: center;
+}
