@@ -2,7 +2,6 @@ function add(produto) {
   var contador = document.getElementById('carrinho').innerHTML;
   var valContador = parseFloat(contador) + 1;
   document.getElementById('carrinho').innerText = valContador;
-
   var produtoCarrinho = document.getElementsByClassName(produto);
   var sacola = [];
   var totalCarrinho;
@@ -38,6 +37,7 @@ function add(produto) {
 
   sacola.toString();
   document.getElementById("prodCarrinho").insertAdjacentHTML('beforeend', sacola);
+  document.getElementById("vazio").innerHTML = '';
   document.getElementById("total").innerHTML = '<strong>TOTAL: R$ ' + soma + '0</strong>';
   document.getElementById("btnFecharCompra").style.display = "block";
 }
@@ -48,5 +48,9 @@ function remove(id){
   produtoRemove.removeChild(elemen);
   var contador = document.getElementById('carrinho').innerHTML;
   var valContador = parseFloat(contador) - 1;
+  if (valContador === 0) {
+    document.getElementById('vazio').innerHTML = '<strong>Carrinho vazio.</strong>';
+    document.getElementById('total').innerHTML = '<strong>TOTAL: R$ 0</strong>';
+  }
   document.getElementById('carrinho').innerText = valContador;
 }
