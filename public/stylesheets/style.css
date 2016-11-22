@@ -7,6 +7,16 @@ span.glyphicon-shopping-cart {
     width: 200px;
 }
 
+.cifrao {
+  position: absolute;
+  margin-left: 55px;
+}
+#cifrao3 {
+  position: absolute;
+  margin-left: 230px;
+  font-weight: bold;
+}
+
 #carrinho {
   background: red;
   font-size: 20px;
@@ -139,4 +149,6 @@ span.glyphicon-shopping-cart {
 
 #total {
   text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
 }
