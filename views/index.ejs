@@ -19,15 +19,17 @@
       <hr />
       <div class="row">
         <% produtos.forEach(function(produto) { %>
-          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 thumbnail">
+          <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4 thumbnail">
+            <div class="thumbnail">
               <span class="spanId <%- produto.idProduto %>"><%- produto.idProduto %></span>
               <p class="sku <%- produto.sku %>"><%- produto.sku %></p>
-              <img src="images/corinthians.jpg" class="imagem <%- produto.idProduto %>" alt="Corinthians" style="width:50%">
+              <img src="images/corinthians.jpg" class="imagem <%- produto.idProduto %>" alt="Corinthians" style="width:100%">
               <p class="descProduto <%- produto.idProduto %>"><%- produto.produto %></p>
               <p class="tamanho <%- produto.idProduto %>"><%- produto.tamanhos %></p>
               <p class="precProduto"><%- produto.moeda %> <span class="valProduto <%- produto.idProduto %>"><%- produto.preco %></span></p>
               <p class="parcelas <%- produto.idProduto %>">ou 3 x <%- produto.moeda %> 30,80</p>
-              <input type="button" class="btn btn-default btnComprar" id="<%- produto.idProduto %>" onclick="add(this.id);" value="Comprar" />
+              <input type="button" class="btn btn-default btnComprar text-center" id="<%- produto.idProduto %>" onclick="add(this.id);" style="width:100%" value="Comprar" />
+            </div>
           </div>
         <% }); %>
       </div>
@@ -40,10 +42,15 @@
         <div id="prodCarrinho">
           <p id="vazio"><strong>Carrinho vazio.</strong></p>
         </div>
-        <hr />
-        <span id="cifrao3"></span>
-        <div id="total"></div>
-        <input type="button" class="btn btn-default" id="btnFecharCompra" value="Comprar" />
+        <div class="row">
+
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <span id="cifrao3"></span>
+          <div id="total"></div>
+          <input type="button" class="btn btn-default" id="btnFecharCompra" value="Comprar" />
+        </div>
+      </div>
+
       </div>
     </div>
     <script src="javascripts/scriptModal.js"></script>

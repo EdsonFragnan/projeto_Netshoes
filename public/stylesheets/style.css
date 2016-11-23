@@ -9,35 +9,34 @@ span.glyphicon-shopping-cart {
 
 .cifrao {
   position: absolute;
-  margin-left: 55px;
+  margin-left: 33%;
 }
+
 #cifrao3 {
-  position: absolute;
-  margin-left: 270px;
   font-weight: bold;
+margin-top: 5px;
+font-size: 25px;
+float: left;
+margin-bottom: 15px;
 }
 
 #carrinho {
   background: red;
-  font-size: 20px;
+  font-size: 18px;
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   text-align: center;
   border-radius: 100%;
   color: #FFF;
-  margin-top: 23px;
-  margin-left: 37px;
+  margin-top: 19px;
+  margin-left: 31px;
 }
 
 #carrinhoCompras {
   padding-top: 10px;
   margin-left: 47%;
   cursor: pointer;
-}
-
-.imagem {
-  margin-left: 25%;
 }
 
 .descProduto {
@@ -73,7 +72,6 @@ span.glyphicon-shopping-cart {
 
 .btnComprar {
   margin-bottom: 10px;
-  margin-left: 37%;
   background: #000;
   color: #FFF;
 }
@@ -115,20 +113,18 @@ span.glyphicon-shopping-cart {
 }
 
 .thumb2 {
-  float: none;
-  margin-left: 232px;
+  width: 100%;
 }
 
 .btn2 {
-  margin-left: 55px;
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 #btnFecharCompra {
-  margin-left: 30%;
   margin-top: 20px;
-  width: 40%;
+  width: 100%;
   background: #000;
   color: #FFF;
   display: none;
@@ -148,8 +144,9 @@ span.glyphicon-shopping-cart {
 }
 
 #total {
-  text-align: center;
   font-weight: bold;
   margin-top: 5px;
-  margin-left: 80px;
+  font-size: 25px;
+  float: left;
+  margin-bottom: 15px;
 }

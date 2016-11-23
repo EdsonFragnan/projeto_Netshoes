@@ -1,6 +1,5 @@
 
 var precoTotal = [];
-var precoCarrinho = [];
 function add(produto) {
   var contador = document.getElementById('carrinho').innerHTML;
   var valContador = parseInt(contador) + 1;
@@ -20,8 +19,8 @@ function add(produto) {
 
   var cifrao = '<span class="cifrao">R$ </span>';
   sacola.push(
-    '<div class="col-xs-6 col-lg-4 thumbnail thumb2"  id="'+ produto.sku +'">' +
-        '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:50%">' +
+    '<div class="col-xs-2 col-md-3 col-lg-3 thumbnail thumb2"  id="'+ produto.sku +'">' +
+        '<img src="'+ produto.imagem +'" class="imagem" alt="Corinthians" style="width:100%">' +
         '<p class="descProduto">' + produto.descricao + '</p>' +
         '<p class="tamanhoProduto">' + produto.tamanho + '</p>' +
         cifrao +
@@ -39,26 +38,32 @@ function add(produto) {
   document.getElementById("prodCarrinho").insertAdjacentHTML('beforeend', sacola);
   document.getElementById("vazio").innerHTML = '';
   document.getElementById("cifrao3").innerText = 'TOTAL: R$ ';
-  document.getElementById("total").innerText = soma;
+  document.getElementById("total").innerText = ' ' + soma;
   document.getElementById("btnFecharCompra").style.display = "block";
 }
 
+var precoCarrinho = [];
+var subtrai = 0;
 function remove(id){
   var valMenor = document.getElementById('total').innerHTML;
   var elemen = document.getElementById(id);
   var elemen2 = document.getElementById(id).childNodes;
   var valElemen = parseFloat(elemen2[4].textContent);
   var total = parseFloat(valMenor);
-  var subtrai = total - valElemen;
+  precoCarrinho.push(valElemen);
+  for (var i = 0; i < precoCarrinho.length; i++) {
+    subtrai = total.toFixed(2)
+    subtrai-= parseFloat(precoCarrinho[i].toFixed(2));
+  }
   var contador = document.getElementById('carrinho').innerHTML;
   var valContador = parseInt(contador) - 1;
   if (valContador === 0) {
     document.getElementById("cifrao3").innerText = '';
     document.getElementById('vazio').innerHTML = '<strong>Carrinho vazio.</strong>';
-    document.getElementById('total').innerHTML = '<strong>TOTAL: R$ '+ 0 +'</strong>';
+    document.getElementById('total').innerHTML = 'TOTAL: R$ '+ 0;
   } else {
     document.getElementById("cifrao3").innerText = '';
-    document.getElementById('total').innerHTML = '<strong>TOTAL: R$ '+ subtrai +'</strong>';
+    document.getElementById('total').innerHTML = 'TOTAL: R$ ' + parseFloat(subtrai.toFixed(2));
   }
   document.getElementById('carrinho').innerText = valContador;
   var produtoRemove = document.getElementById("prodCarrinho");

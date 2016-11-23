@@ -1,6 +1,11 @@
 # Projeto Netshoes
 
-#Template para monitores Large
+# Resolução 1024 X 863
+
+# Tecnologias:
+# NODE.JS - Server e consumir JSON de produtos
+# JavaScript
+# Bootstrap - Grid
 
 # Passos:
 
@@ -10,6 +15,6 @@
 # 4º - Aparecerá um contator no carrinho.
 # 5º - Para verificar o produto escolhido é só clicar no carrinho.
 # 6º - Abrirá um modal com o(s) produto(s) escolhidos.
-# 7º - Clicar no (X) removerá o produto do carrinho.
+# 7º - Clicar no Botão remover e removerá o produto do carrinho.
 
 # Obrigado.
