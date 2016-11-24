@@ -12,17 +12,17 @@
 
   <body>
     <div class="container">
-      <div id="carrinhoCompras">
-        <span id="carrinho">0</span>
-        <img src="images/carrinho.jpg" alt="carrinho" style="width:15%">
+      <div class="row">
+        <div id="carrinhoCompras">
+          <span id="carrinho">0</span>
+          <img src="images/carrinho.jpg" class="imgCarrinho" alt="carrinho" />
+        </div>
+        <hr />
       </div>
-      <hr />
       <div class="row">
         <% produtos.forEach(function(produto) { %>
           <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4 thumbnail">
-            <div class="thumbnail">
-              <span class="spanId <%- produto.idProduto %>"><%- produto.idProduto %></span>
-              <p class="sku <%- produto.sku %>"><%- produto.sku %></p>
+            <div class="thumbnail <%- produto.idProduto %>">
               <img src="images/corinthians.jpg" class="imagem <%- produto.idProduto %>" alt="Corinthians" style="width:100%">
               <p class="descProduto <%- produto.idProduto %>"><%- produto.produto %></p>
               <p class="tamanho <%- produto.idProduto %>"><%- produto.tamanhos %></p>
@@ -43,14 +43,12 @@
           <p id="vazio"><strong>Carrinho vazio.</strong></p>
         </div>
         <div class="row">
-
           <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
             <span id="cifrao3"></span>
-          <div id="total"></div>
-          <input type="button" class="btn btn-default" id="btnFecharCompra" value="Comprar" />
+            <div id="total"></div>
+            <input type="button" class="btn btn-success" id="btnFecharCompra" value="COMPRAR" />
+          </div>
         </div>
-      </div>
-
       </div>
     </div>
     <script src="javascripts/scriptModal.js"></script>

@@ -1,42 +1,58 @@
 span.glyphicon-shopping-cart {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .esqueletoProduto {
-    margin-bottom: 5px;
-    width: 200px;
+  margin-bottom: 5px;
+  width: 200px;
 }
 
 .cifrao {
   position: absolute;
-  margin-left: 33%;
+  margin-left: -30px;
+}
+
+#vazio {
+  margin-left: -15px;
 }
 
 #cifrao3 {
   font-weight: bold;
-margin-top: 5px;
-font-size: 25px;
-float: left;
-margin-bottom: 15px;
+  margin-top: 5px;
+  font-size: 25px;
+  float: left;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+#carrinhoCompras {
+  padding-top: 10px;
+  cursor: pointer;
+  padding-bottom: 70px;
 }
 
 #carrinho {
   background: red;
   font-size: 18px;
-  position: absolute;
-  width: 27px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
   text-align: center;
+  position: absolute;
   border-radius: 100%;
   color: #FFF;
-  margin-top: 19px;
-  margin-left: 31px;
+  margin-top: 21px;
+  left: 50%;
+  margin-left: -6px;
 }
 
-#carrinhoCompras {
-  padding-top: 10px;
-  margin-left: 47%;
-  cursor: pointer;
+.imgCarrinho {
+  width: 80px;
+  height: 80px;
+	position:absolute;
+	left:50%;
+	margin-left:-40px;
+  z-index: -1;
+
 }
 
 .descProduto {
@@ -77,32 +93,34 @@ margin-bottom: 15px;
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 40%;
+  background-color: #000;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 40%;
+  color: #FFF;
 }
 
 .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
@@ -120,14 +138,16 @@ margin-bottom: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
+  background: #FFF;
+  color: #000;
 }
 
 #btnFecharCompra {
   margin-top: 20px;
-  width: 100%;
-  background: #000;
+  width: 92%;
   color: #FFF;
-  display: none;
+  margin-left: 14px;
+  font-weight: bold;
 }
 
 .spanId {
@@ -139,7 +159,7 @@ margin-bottom: 15px;
 }
 
 .precProdutoCarrinho {
-  text-align: center;
+  margin-left: 25px;
   margin-bottom: 0px;
 }
 
@@ -149,4 +169,5 @@ margin-bottom: 15px;
   font-size: 25px;
   float: left;
   margin-bottom: 15px;
+  margin-left: 5px;
 }

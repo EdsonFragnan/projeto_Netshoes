@@ -32,5 +32,12 @@ module.exports = (app) => {
 }
 
 const tratamentoPreco = (preco) => {
-  return preco + '0';
+  var arrayPreco = [];
+  var precoFormat = 0;
+  arrayPreco.push(preco);
+  for (var i in arrayPreco) {
+    var trataCent = arrayPreco[i].toFixed(2);
+    var trataVirg = trataCent.replace('.',',');
+  }
+  return trataVirg;
 }
