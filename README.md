@@ -1,9 +1,9 @@
 # Projeto Netshoes
 
-# Resolução 1024 X 863
-
 # Tecnologias:
 # NODE.JS - Server e consumir JSON de produtos
+# HTML
+# CSS
 # JavaScript
 # Bootstrap - Grid
 
