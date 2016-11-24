@@ -56,7 +56,7 @@ function remove(id){
   var contador = document.getElementById('carrinho').innerHTML;
   var valContador = parseInt(contador) - 1;
   if (valContador === 0) {
-    document.getElementById('vazio').innerHTML = '<strong>Carrinho vazio.</strong>';
+    document.getElementById('vazio').innerHTML = '<strong>Carrinho vazio.</strong><hr>';
     document.getElementById('total').innerHTML = subtrai.toFixed(2).replace('.',',');
   } else {
     document.getElementById('total').innerHTML = subtrai.toFixed(2).replace('.',',');
