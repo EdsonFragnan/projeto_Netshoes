@@ -42,7 +42,7 @@ function add(produto) {
 
 var precoCarrinho = [];
 var subtrai = 0;
-function remove(id){
+function remove(id) {
   var total2 = document.getElementById("total").innerText;
   var tratarVirgulaTotal = parseFloat(total2.replace(',', '.'));
   var elemen = document.getElementById(id);
@@ -65,4 +65,9 @@ function remove(id){
   var produtoRemove = document.getElementById("prodCarrinho");
   produtoRemove.removeChild(elemen);
   precoTotal = [];
+}
+
+function fechaCompra() {
+  var valCompra = document.getElementById('total').innerHTML;
+  alert('Obrigado pela compra no valor de R$ ' + valCompra + '! A NetShoes Agradece. :)')
 }
